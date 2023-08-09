@@ -1,20 +1,28 @@
 import React from 'react'
 
-export const Todo = ({todos,setTodos}) => {
-    const handleDelete=({id})=>{
-        setTodos(todos.filter((todo)=>todo.length!==id))
-        
-    }
+export const Todo = ({todos, setTodos,setinputs,setEditing,setindex}) => {
+
+  const handleEdit=(index)=>{
+    setinputs(todos[index].title)
+    setEditing(true);
+    setindex(index);
+  }
+   const handleDelete=(index)=>{
+    const deletearr = [...todos]
+    deletearr.splice(index,1)
+    setTodos(deletearr)
+   } 
   return (
     <>
     <div className="todo">{
-        todos.map((todo)=>{
+        todos.map((todo,index)=>{
+          console.log(todo.id)
             return(
                 <>
-                 <li key={todo.id} >{todo.title}</li>
+                 <li className='lists' key={todo.id} >{todo.title}</li>
             <div>
-            <button>Edit</button>
-                <button onClick={()=>handleDelete(todos)}>Delete</button>
+            <button  className="editbtn" onClick={()=>handleEdit(index)}>Edit</button>
+            <button  className="dltbtn" onClick={()=>handleDelete(index)} >Delete</button>
             </div>
             </>
                
@@ -23,6 +31,6 @@ export const Todo = ({todos,setTodos}) => {
         }</div>
        
     </>
-    
+     
   )
 }

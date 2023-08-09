@@ -16,6 +16,10 @@ code {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  border:1px solid;
+  border-style: none;
+  background-color: bisque;
+  padding: 10px 20px;
 }
 .todo{
   display: flex;
@@ -23,4 +27,27 @@ code {
   justify-content: center;
   align-items: center;
   margin-top: 20px;
+}
+.box{
+  height:40px;
+  width:350px;
+  background-color: rgb(125, 78, 170);
+  color:white;
+  border-style: none;
+  border-radius: 10px;
+}
+.Addbtn,.savebtn{
+  height:40px;
+  width:100px;
+  border-radius: 10px;
+  border-style: none;
+  margin-top: 20px;
+}
+.editbtn,.dltbtn{
+  height:40px;
+  width:100px;
+  border-radius: 10px;
+  border-style: none;
+  margin-left: 10px;
+  margin-top: 10px;
 }

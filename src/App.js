@@ -6,7 +6,8 @@ import './App.css';
 const App=()=> {
   const[inputs,setinputs] = useState("")
   const[todos,setTodos]=useState([])
-  let id=0;
+  const[index,setindex]=useState(null)
+  const[isediting,setEditing]=useState(false)
 return(
 
  <div>
@@ -15,9 +16,12 @@ return(
   setinputs={setinputs}
   todos={todos}
   setTodos={setTodos}
-  id={id}
+  index = {index}
+  setindex={setindex}
+  isediting={isediting}
+  setEditing={setEditing}
    />
-   <Todo todos={todos} setTodos={setTodos}/>
+   <Todo todos={todos} setTodos={setTodos} setinputs={setinputs} setEditing={setEditing} setindex={setindex}/>
  </div>
   
 )
